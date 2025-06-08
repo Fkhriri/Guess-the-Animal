@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'mainfont';
+    src: url('fonts/mainfont.ttf') format('truetype');
+}
+
+body {
+    font-family: 'mainfont', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url('images/main.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body.pre-game-active {
+    background-image: url('images/menu.jpg');
+}
+
+#game-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#image-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    gap: 20px;
+}
+
+.option {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.option.selected {
+    border-color: #27ae60;
+    transform: scale(1.05);
+    animation: pulse 0.5s;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.05); }
+}
+
+#question {
+    font-size: 24px;
+    margin: 20px 0;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+#score {
+    font-size: 22px;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #3498db;
+    transition: all 0.3s;
+}
+
+#score.score-update {
+    transform: scale(1.1);
+    color: #27ae60;
+}
+
+#feedback {
+    font-size: 24px;
+    min-height: 40px;
+    margin: 20px 0;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.correct {
+    color: #27ae60;
+    animation: fadeIn 0.5s;
+}
+
+.wrong {
+    color: #e74c3c;
+    animation: shake 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 10px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#listen-btn {
+    background-color: #2ecc71;
+}
+
+#listen-btn:hover {
+    background-color: #27ae60;
+}
+
+#listen-btn:disabled {
+    background-color: #7f8c8d;
+}
+
+#label-container {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+#label-container div {
+    margin: 5px 0;
+}
+
+#pre-game {
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#pre-game h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #3498db;
+}
+
+#pre-game p {
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+#pre-game button {
+    font-size: 1.5em;
+    padding: 15px 40px;
+}
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 10px 0;
+    padding: 5px;
+    background-color: rgba(231, 76, 60, 0.1);
+    border-radius: 5px;
+    animation: pulse 1s infinite;
+}
+
+button#start-btn[disabled="false"] {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.sound-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 50%;
+    background: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.sound-btn:hover {
+    transform: scale(1.1);
+    background: #2980b9;
+}
