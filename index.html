@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Tebak Gambar dengan Suara</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="pre-game">
+        <h1>Selamat Datang di Game Tebak Gambar!</h1>
+        <p>Tebak gambar dengan suara atau klik pada gambar yang sesuai dengan pertanyaan.</p>
+        <button id="start-btn">Mulai Game</button>
+    </div>
+    <div id="game-container" style="display: none;">
+        <h1>Game Tebak Gambar</h1>
+        <div id="score">Skor: 0</div>
+        <div id="question">Pilih gambar yang sesuai dengan suara:</div>
+        <div id="feedback"></div>
+        <div id="image-container">
+            <img class="option" data-value="A" src="images/apel.jpg" alt="Opsi A">
+            <img class="option" data-value="B" src="images/buku.jpg" alt="Opsi B">
+            <img class="option" data-value="C" src="images/coklat.jpg" alt="Opsi C">
+        </div>
+        <div id="voice-control">
+            <button id="listen-btn" disabled>Mulai Mendengarkan</button>
+            <div id="label-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
